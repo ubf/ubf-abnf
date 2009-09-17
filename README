@@ -23,6 +23,15 @@ To build
    $ make check
 
 
+**NOTE**
+
+Before make, edit "src/Makefile" to change the "MY_UBF_EBIN" variable
+to point to where the ebin directory that contains ubf's .beam files
+and the "MY_UBF_INCLUDE" variable to point to where the include
+directory that contains ubf's .hrl files.  Repeat the same steps for
+abnfc.  Then run "make".
+   
+   
 Documentation -- Where should I start?
 ======================================
 
@@ -51,8 +60,8 @@ really short summary:
 What is ABNF?
 =============
 
-Augmented Backus–Naur Form (ABNF) is a metalanguage based on
-Backus–Naur Form (BNF), but consisting of its own syntax and
+Augmented Backus-Naur Form (ABNF) is a metalanguage based on
+Backus-Naur Form (BNF), but consisting of its own syntax and
 derivation rules.
 
    * The motive principle for ABNF is to describe a formal system of a
