@@ -1,3 +1,8 @@
+2009-10-15 00:45 JST  norton
+
+        * src/abnf_contract_parser.erl: remove unused code and
+        misc. cleanups
+
 2009-09-18 00:15 JST  norton
 
         * ChangeLog: Add new ChangeLog

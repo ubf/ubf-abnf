@@ -6,74 +6,60 @@
 -include("ubf_impl.hrl").
 -include("abnf_impl.hrl").
 
--export([parse_transform/2,
-         file/1
-        ]).
+-export([parse_transform/2]).
+
+%%====================================================================
+%% External Parse Transform
+%%====================================================================
 
 parse_transform(In, _Opts) ->
     %% io:format("In:~p~n   Opts: ~p~n",[In, _Opts]),
+    Name = case [X || {attribute, _, module, X} <- In] of [M] -> atom_to_list(M) end,
+    VSN = case [X || {attribute, _, vsn, X} <- In] of [V] -> V; _ -> "" end,
     Imports = [X || {attribute, _, add_types, X} <- In],
     Out = case [X || {attribute, _, add_contract, X} <- In] of
               [File] ->
-                  %% io:format("Contract: ~p ~p~n", [File, Imports]),
-                  case file1(File ++ ".abnf", Imports) of
-                      ok ->
-                          io:format("THIS IS NOT FAIR!\n"),
-                          exit(error);
+                  case file(Name, VSN, Imports, File ++ infileExtension()) of
                       {ok, Contract, _Header} ->
-                          %% io:format("Contract added:~n"),
+                          %% io:format("Contract added: ~p~n", [Contract]),
                           contract_parser:parse_transform_contract(In, Contract);
                       {error, Why} ->
                           io:format("Error in contract:~p~n", [Why]),
-                          exit(error)
+                          erlang:error(Why)
                   end;
               [] ->
                   In
           end,
     Out.
 
+
+%%====================================================================
+%% External API
+%%====================================================================
+
+
+%%====================================================================
+%% Internal functions
+%%====================================================================
+
 infileExtension()  -> ".abnf".
 
-file(F) ->
-    case {infileExtension(), filename:extension(F)} of
-        {X, X} ->
-            %% io:format("Parsing ~s~n", [F]),
-            case file1(F) of
-                {ok, Contract, _Header} ->
-                    %% contract - buc
-                    Enc = ubf:encode(Contract),
-                    ok = file:write_file(filename:rootname(F) ++
-                                         contract_parser:outfileExtension(),
-                                         Enc),
-                    Size = length(Enc),
-                    Bsize = size(term_to_binary(Contract)),
-                    {ok, {ubfSize,Size,bsize,Bsize}};
-                Error ->
-                    Error
-            end;
-        _ ->
-            {error, bad_extension}
-    end.
-
-file1(F) ->
-    file1(F,[]).
-
-file1(F, Imports) ->
+file(Name, VSN, Imports, F) ->
+    %% io:format("~n~p ~p~n~p~n~p~n", [Name, VSN, Imports, F]),
     case file:read_file(F) of
         {ok, Bin} ->
             case abnfc:parse(binary_to_list(Bin), []) of
                 {ok, AST, _Rest} ->
-                    Name = filename:basename(F, infileExtension()),
-                    VSN = "",
                     Types = ast2ubf(abnfc_ast:ast_to_int_form(AST)),
                     %% io:format("~n~p~n", [Types]),
                     contract_parser:tags([{name,Name}, {vsn,VSN}, {types,Types}], Imports);
-                E ->
-                    E
+                Err ->
+                    Err
             end;
-        E ->
-            E
+        Err ->
+            Err
     end.
+
 
 %% -record(rule, {type, name, body, code}).
 ast2ubf(#rule{type=def_rule, name=Name, body=Body, code=nocode}) ->
