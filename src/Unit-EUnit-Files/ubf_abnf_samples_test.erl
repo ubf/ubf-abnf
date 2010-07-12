@@ -1,10 +1,9 @@
-%%% $Id$
 %%% Description: eunit test for ubf and abnf
 %%%-------------------------------------------------------------------
 
 -module(ubf_abnf_samples_test).
 
--include("eunit.hrl").
+-include_lib("eunit/include/eunit.hrl").
 
 -compile(export_all).
 
