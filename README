@@ -15,6 +15,8 @@ To download
          insteadOf = git://github.com/norton/src/erl-tools/gmt-bom.git
     [url "git://github.com/norton/ubf.git"]
          insteadOf = git://github.com/norton/src/erl-tools/ubf.git
+    [url "git://github.com/norton/ubf-abnf.git"]
+         insteadOf = git://github.com/norton/src/erl-tools/ubf-abnf.git
     [url "git://github.com/norton/abnfc.git"]
          insteadOf = git://github.com/norton/src/erl-third-party/abnfc.git
 
