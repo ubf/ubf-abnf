@@ -1,2 +1,4 @@
 #DEP  src/erl-tools/gmt-bom                  *
 #DEP  src/erl-tools/ubf                      *
+
+#DEP  src/erl-third-party/abnfc              *
