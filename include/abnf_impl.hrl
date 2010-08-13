@@ -1,5 +1,5 @@
 %%%----------------------------------------------------------------------
-%%% Description: ABNF Implmentation Utilities
+%%% Description: ABNF Implementation Utilities
 %%%----------------------------------------------------------------------
 
 -ifndef(abnf_impl).
