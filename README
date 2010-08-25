@@ -27,7 +27,7 @@ To download
 
     $ mkdir -p ~/work/ubf-abnf
     $ cd ~/work/ubf-abnf
-    $ git clone git@github.com:norton/bom.git .
+    $ git clone git://github.com/norton/bom.git .
     $ env BOM_GIT=git://github.com/norton/ \
       ./bom.sh co src/erl-tools/ubf-abnf
 
