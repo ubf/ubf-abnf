@@ -1,3 +1,7 @@
+2010-09-25 02:00 JST  norton
+	* src/abnf_contract_parser.erl: use new rfc4234 parser that
+	supports case-sensitive strings
+
 2010-08-07 13:00 JST  norton
 	* Update README, Makefile, BOM.mk, and GMBOM files for building
 	with bom.sh

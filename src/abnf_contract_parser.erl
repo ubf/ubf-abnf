@@ -47,7 +47,7 @@ file(Name, VSN, Imports, F) ->
     %% io:format("~n~p ~p~n~p~n~p~n", [Name, VSN, Imports, F]),
     case file:read_file(F) of
         {ok, Bin} ->
-            case abnfc:parse(binary_to_list(Bin), []) of
+            case abnfc:parse(binary_to_list(Bin), [{parser,abnfc_rfc4234ext}]) of
                 {ok, AST, _Rest} ->
                     Types = ast2ubf(abnfc_ast:ast_to_int_form(AST)),
                     %% io:format("~n~p~n", [Types]),
