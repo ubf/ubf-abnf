@@ -1,7 +1,7 @@
-%%% Description: eunit test for ubf and abnf
+%%% Description: eunit tests for ubf and abnf
 %%%-------------------------------------------------------------------
 
--module(ubf_abnf_samples_test).
+-module(ubf_abnf_samples_tests).
 
 -include_lib("eunit/include/eunit.hrl").
 

@@ -5,4 +5,4 @@
 
 %% NOTE the following two lines
 -compile({parse_transform,abnf_contract_parser}).
--add_contract("./Unit-EUnit-Files/rfc5234_core").
+-add_contract("./test/eunit/rfc5234_core").

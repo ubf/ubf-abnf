@@ -1,3 +1,7 @@
+2011-01-07 13:00 JST  norton
+	* Prepare for v0.1 tag: refactor UBF and friends to use repo and
+	rebar tools.
+
 2010-09-25 02:00 JST  norton
 	* src/abnf_contract_parser.erl: use new rfc4234 parser that
 	supports case-sensitive strings
