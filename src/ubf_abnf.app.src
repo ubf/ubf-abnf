@@ -3,7 +3,7 @@
 {application, ubf_abnf,
  [
   {description, "Universal Binary Format and ABNF"},
-  {vsn, "0.0.1"},
+  {vsn, "0.1.0"},
   {registered, []},
   {applications, [kernel, stdlib, sasl]},
   {modules, [abnf_contract_parser.erl
