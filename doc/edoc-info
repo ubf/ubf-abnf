@@ -1,0 +1,3 @@
+{application,ubf_abnf}.
+{packages,[]}.
+{modules,[abnf_contract_parser]}.
