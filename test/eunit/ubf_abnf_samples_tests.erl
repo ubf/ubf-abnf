@@ -137,7 +137,7 @@ test_uri(T) ->
 
 
 test_uri_1() ->
-    ?assert(test_uri(<<"http://github.com/norton/ubf-abnf">>)).
+    ?assert(test_uri(<<"http://github.com/ubf/ubf-abnf">>)).
 test_uri_2() ->
-    ?assertNot(test_uri(<<"ht/tp://github.com/norton/ubf-abnf">>)).
+    ?assertNot(test_uri(<<"ht/tp://github.com/ubf/ubf-abnf">>)).
 
