@@ -5,7 +5,7 @@
 -ifndef(abnf_impl).
 -define(abnf_impl, true).
 
--include("abnfc_ast.hrl").
+-include_lib("abnfc/include/abnfc_ast.hrl").
 
 %%%-------------------------------------------------------------------
 %%% Macros
