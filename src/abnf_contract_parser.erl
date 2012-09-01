@@ -19,7 +19,7 @@ parse_transform(In, _Opts) ->
     Out = case [X || {attribute, _, add_contract, X} <- In] of
               [File] ->
                   case file(Name, VSN, Imports, File ++ infileExtension()) of
-                      {ok, Contract, _Header} ->
+                      {ok, Contract} ->
                           %% io:format("Contract added: ~p~n", [Contract]),
                           contract_parser:parse_transform_contract(In, Contract);
                       {error, Why} ->
