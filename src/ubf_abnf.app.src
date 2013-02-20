@@ -6,7 +6,7 @@
   {vsn, git},
   {registered, []},
   {applications, [kernel, stdlib, sasl]},
-  {modules, [abnf_contract_parser.erl
+  {modules, [abnf_contract_parser
             ]}
  ]
 }.
