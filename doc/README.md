@@ -1,11 +1,11 @@
 
 
-#Universal Binary Format and ABNF#
-
+# Universal Binary Format and ABNF #
 
 Copyright (c) 2011-2013 by Joseph Wayne Norton
 
-__Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).<p>This is UBF-ABNF, a framework for integrating UBF and ABNF.  This
+__Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).
+<p>This is UBF-ABNF, a framework for integrating UBF and ABNF.  This
 repository depends on the UBF and ABNFC open source repositories.</p>
 <p><em>This repository is experimental in nature and not intended for
 production usage.</em></p>
@@ -335,7 +335,7 @@ repository under an MIT license.</p>
 
 
 
-##Modules##
+## Modules ##
 
 
 <table width="100%" border="0" summary="list of modules">
